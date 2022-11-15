@@ -47,5 +47,6 @@ public class lesson2_2 {
         }
         logger.info("Now :" + Arrays.toString(mas));
         System.out.println(Arrays.toString(mas));
+
     }
 }

@@ -22,5 +22,6 @@ public class lesson2_3 {
         String path = "C:\\Users\\SLAVA\\Desktop\\My Projects\\Java\\lesson 2\\lesson 2_1\\lesson 2_1";
         getAllFiles(path);
 
+
     }
 }

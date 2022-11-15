@@ -29,6 +29,7 @@ public class lesson2_1 {
 //        sb.replace(sb.length() - 4, sb.length() , "");
 //        System.out.println(sb.toString());
 
+
     }
 
 
