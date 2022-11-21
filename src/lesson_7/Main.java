@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Product> list = new ArrayList<Product>(
+        List<Product> list = new ArrayList<>(
                 Arrays.asList(
                         new Product("Mars", 10.5),
                         new Product("Twix", 20.00)
@@ -20,7 +20,7 @@ public class Main {
         String key = "Mars";
         System.out.println(machine.getProductByName(key));
 
-        List<Product> listBottle = new ArrayList<Product>(
+        List<Product> listBottle = new ArrayList<>(
                 Arrays.asList(
                         new Bottle("Coca Cola", 1.00, 0.5),
                         new Bottle("Sprite", 20.00, 1.00)
