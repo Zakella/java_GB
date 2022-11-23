@@ -1,6 +1,7 @@
 package OOP.SimpleProject.src.main.java.ru.gb.oseminar.service;
 
 import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.Student;
+import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.Teacher;
 import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.User;
 
 import java.util.ArrayList;
@@ -27,6 +28,11 @@ public class UserService implements DataService {
     }
 
 
+    public Teacher createUser(String firstName, String lastName, String patronymic, Long Id) {
+        return new Teacher(firstName, lastName, patronymic, Id);
+    }
+
+
     @Override
     public List<User> getAll() {
         return this.users;
@@ -41,6 +47,20 @@ public class UserService implements DataService {
                 }
             }
         }
+    }
+
+    public List<Student> getAllStudents(){
+        List <Student> listStudents = new ArrayList<>();
+        for (User user:this.getAll()
+        ) {
+            if(user instanceof Student){
+                listStudents.add((Student) user);
+
+            }
+
+        }
+
+        return listStudents;
     }
 
 }
