@@ -1,14 +1,13 @@
 package OOP.SimpleProject.src.main.java.ru.gb.oseminar.controller;
 
-import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.Student;
-import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.StudyGroup;
-import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.Teacher;
-import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.User;
+import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.*;
 import OOP.SimpleProject.src.main.java.ru.gb.oseminar.service.UserService;
 import OOP.SimpleProject.src.main.java.ru.gb.oseminar.service.StudyGroupService;
 import OOP.SimpleProject.src.main.java.ru.gb.oseminar.view.StudentView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Controller {
@@ -52,5 +51,18 @@ public class Controller {
         studentView.showStudyGroups(studyGroups);
     }
 
+    public void showSortStudyGroup(List <Student> studentsList){
+        Collections.sort(studentsList, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                if(s1.getLastName().equalsIgnoreCase(s2.getLastName())){
+                    return s1.getFirstName().compareTo(s2.getFirstName());
+                }
+
+                return s1.getLastName().compareTo(s2.getLastName());
+            }
+        });
+        studentView.showStudents(studentsList);
+    }
 
 }
