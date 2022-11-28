@@ -34,7 +34,8 @@ public class StudentView {
     }
 
     public void showStudentsInGroup( List<StudyGroup> studyGroupList){
-        Logger log = Logger.getLogger(StudentView.class.getName());
+      // Logger log = Logger.getLogger(StudentView.class.getName());
+        Logger log = Logger.getAnonymousLogger();
         for (StudyGroup groups : studyGroupList) {
 //            log.info("Id: " + groups.toString());
             System.out.println("Group №: " + groups.getIdStudentGroup());
@@ -42,7 +43,7 @@ public class StudentView {
             Collections.sort(studentsList, new StudyGroupComparator());
             for (Student student:studentsList){
                 System.out.println(student);
-//                log.info(student.toString());
+//                System.out.println(student.getStudentID());
             };
         }
 

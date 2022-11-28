@@ -7,16 +7,21 @@ import OOP.SimpleProject.src.main.java.ru.gb.oseminar.data.Teacher;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class StudyGroupService {
 
     private  final List<StudyGroup> studyGroupList;
+
+
     public StudyGroupService() {
         this.studyGroupList = new ArrayList<>();
+
     }
 
-    public void completeStudyGroup(Teacher teacher, List<Student> studentsList, Integer groupId) {
-        this.studyGroupList.add(new StudyGroup(teacher, studentsList, groupId));
+    public void completeStudyGroup(Teacher teacher, List<Student> studentsList) {
+        this.studyGroupList.add(new StudyGroup(teacher, studentsList));
     };
 
 

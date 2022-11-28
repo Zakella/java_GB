@@ -16,15 +16,7 @@ public class UserService implements DataService {
 
     @Override
     public void createUser(String firstName, String lastName, String patronymic) {
-        Long id = 0L;
-        for (User user : this.users) {
-            if (user instanceof Student) {
-                if (id < ((Student) user).getStudentID()) {
-                    id = ((Student) user).getStudentID();
-                }
-            }
-        }
-        this.users.add(new Student(firstName, lastName, patronymic, ++id));
+        this.users.add(new Student(firstName, lastName, patronymic));
     }
 
 

@@ -15,20 +15,23 @@ public class Main {
     public static void main(String[] args) {
 
         Controller controller = new Controller();
-        controller.createUser("Petr", "Zaverin", "Anton");
-        controller.createUser("Ilon", "Mask", "Joe");
-        controller.createUser("Joe", "Doe", "Djek");
+        List<Student> studentsGr1 = new ArrayList<>();
+        studentsGr1.add(new Student("Petr", "Zaverin", "Anton"));
+        studentsGr1.add(new Student("Ilon", "Mask", "Joe"));
+        studentsGr1.add(new Student("Joe", "Doe", "Djek"));
+
         Teacher teacher = controller.createTeacher("Master", "Ioda", "Djedai", 111L);
-        controller.createTimetable(teacher, controller.getOnlyStudents(), 123);
-        controller.clearUsers();
-        controller.createUser("Alexey", "Aavereev", "Borisovich");
-        controller.createUser("Petr", "Sidorov", "Avraam");
-        controller.createUser("Aavram", "Linkoln", "Avraam");
+        controller.createTimetable(teacher, studentsGr1);
 
-        controller.createTimetable(controller.createTeacher("Bill", "Gaits", "Noname", 222L)
-                , controller.getOnlyStudents(), 333);
+        List<Student> studentsGr2 = new ArrayList<>();
+        studentsGr2.add(new Student("Petr", "Zaverin", "Anton"));
+        studentsGr2.add(new Student("Ilon", "Mask", "Joe"));
+        studentsGr2.add(new Student("Joe", "Doe", "Djek"));
 
-         controller.showStudentsInGroups();
+       controller.createTimetable(controller.createTeacher("Bill", "Gaits", "Noname", 222L)
+                , studentsGr2);
+
+        controller.showStudentsInGroups();
 
 
     }

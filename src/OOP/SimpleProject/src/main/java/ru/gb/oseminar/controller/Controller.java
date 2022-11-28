@@ -14,15 +14,9 @@ public class Controller {
 
     private final StudentView studentView = new StudentView();
 
-    private StudyGroupService studyGroupService;
+    private final StudyGroupService studyGroupService = new StudyGroupService();
 
-    public Controller() {
-        this.studyGroupService = new StudyGroupService();
-    }
-
-    public void createNewStudyGroup(StudyGroupService studyGroupService) {
-        this.studyGroupService = studyGroupService;
-    }
+    private List<Student> studentsList;
 
     public void createUser(String firstName, String lastName, String patronymic) {
         userService.createUser(firstName, lastName, patronymic);
@@ -49,11 +43,6 @@ public class Controller {
         studentView.sendOnConsole(teachers);
     }
 
-
-    public StudyGroupService createStudyGroups() {
-        return new StudyGroupService();
-    }
-
     public void showStudyGroups() {
         studentView.showStudyGroups(this.studyGroupService.getStudyGroupList());
     }
@@ -64,13 +53,10 @@ public class Controller {
     }
 
 
-    public void createTimetable(Teacher teacher, List<Student> studentList, Integer groupId) {
-        this.studyGroupService.completeStudyGroup(teacher, studentList, groupId);
+    public void createTimetable(Teacher teacher, List<Student> studentList) {
+        this.studyGroupService.completeStudyGroup(teacher, studentList);
     }
 
-    public void clearUsers(){
-        this.userService.clearAll();
-    };
 
     public void showStudentsInGroups() {
         this.studentView.showStudentsInGroup(this.studyGroupService.getStudyGroupList());
