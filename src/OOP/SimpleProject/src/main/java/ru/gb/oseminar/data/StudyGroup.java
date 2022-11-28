@@ -7,9 +7,16 @@ public class StudyGroup {
     private Teacher teacher;
     private List<Student> studentsList;
 
-    public StudyGroup(Teacher teacher, List<Student> studentsList) {
+    public Integer getIdStudentGroup() {
+        return idStudentGroup;
+    }
+
+    private Integer idStudentGroup;
+
+    public StudyGroup(Teacher teacher, List<Student> studentsList, Integer idStudentGroup) {
         this.teacher = teacher;
         this.studentsList = studentsList;
+        this.idStudentGroup = idStudentGroup;
     }
 
     public Teacher getTeacher() {
@@ -33,6 +40,7 @@ public class StudyGroup {
         return "StudyGroup{" +
                 "teacher=" + teacher +
                 ", studentsList=" + studentsList +
+                ", idStudentGroup=" + idStudentGroup +
                 '}';
     }
 }

@@ -32,6 +32,11 @@ public class UserService implements DataService {
         return new Teacher(firstName, lastName, patronymic, Id);
     }
 
+    public void clearAll(){
+        this.users.clear();
+
+    }
+
 
     @Override
     public List<User> getAll() {

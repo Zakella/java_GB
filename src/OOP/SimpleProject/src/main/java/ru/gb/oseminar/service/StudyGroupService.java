@@ -10,11 +10,17 @@ import java.util.List;
 
 public class StudyGroupService {
 
-    public List<StudyGroup> completeStudyGroup(Teacher teacher, List<Student> studentsList) {
+    private  final List<StudyGroup> studyGroupList;
+    public StudyGroupService() {
+        this.studyGroupList = new ArrayList<>();
+    }
 
-        List<StudyGroup> studyGroupList = new ArrayList<>();
-        studyGroupList.add(new StudyGroup(teacher, studentsList));
-        return studyGroupList;
-
+    public void completeStudyGroup(Teacher teacher, List<Student> studentsList, Integer groupId) {
+        this.studyGroupList.add(new StudyGroup(teacher, studentsList, groupId));
     };
+
+
+    public List<StudyGroup> getStudyGroupList() {
+        return studyGroupList;
+    }
 }
