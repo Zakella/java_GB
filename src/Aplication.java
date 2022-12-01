@@ -1,10 +1,12 @@
 import controller.Controller;
 import data.Priority;
+
 import java.util.*;
 
 public class Aplication {
 
     public static void main(String[] args) {
+
         Controller controller = new Controller();
         controller.startScheduler();
         controller.addTask(Priority.HIGH,"First task", "You need to test your first task", "VZ");

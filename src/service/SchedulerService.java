@@ -8,6 +8,7 @@ import java.util.Optional;
 public class SchedulerService {
 
     private final Scheduler scheduler = new Scheduler();
+    private final ReaderService reader = new ReaderService();
 
 
     public  void startScheduler(){
@@ -44,5 +45,7 @@ public class SchedulerService {
       taskList.remove(this.getTaskById(taskId));
 
    }
+
+
 
 }
