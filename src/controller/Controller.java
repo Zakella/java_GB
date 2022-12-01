@@ -44,4 +44,7 @@ public class Controller {
         scheduleService.deleteTaskById(taskId);
     }
 
+    public void writeAllTasksInFile(String format){
+            scheduleService.writeTasksInFile(scheduleService.getTasks(), format);
+    }
 }

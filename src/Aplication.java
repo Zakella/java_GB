@@ -27,6 +27,9 @@ public class Aplication {
 
         controller.deleteTask(5);
         controller.showTasks();
+        controller.writeAllTasksInFile("json");
+
+//        controller.writeFile("all");
 
 
 

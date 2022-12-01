@@ -32,7 +32,7 @@ public class SchedulerService {
        Optional<Task> task = tasksList.stream().
                filter(item -> idTask.equals(item.getId()))
                .findAny();
-       if (!task.isPresent()){
+       if (task.isEmpty()){
            throw new RuntimeException("Task is not found!");
        }
        else{
@@ -46,6 +46,9 @@ public class SchedulerService {
 
    }
 
+   public void writeTasksInFile(List <Task> taskList, String format){
+        this.reader.writeData(taskList, format);
+   }
 
 
 }
