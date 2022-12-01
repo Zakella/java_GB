@@ -3,7 +3,7 @@ package service;
 import data.CSVReader;
 import data.JsonReader;
 import data.Task;
-import data.xmlReader;
+import data.XmlReader;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class ReaderService {
 
 
         if (format.equals("xml")) {
-            new xmlReader().writeData(listTasks);
+            new XmlReader().writeData(listTasks);
 
         }
 
@@ -45,7 +45,7 @@ public class ReaderService {
 
 
         if (format.equals("xml")) {
-            new xmlReader().readData(listTasks);
+            new XmlReader().readData(listTasks);
 
         }
 

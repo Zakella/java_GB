@@ -2,7 +2,7 @@ package data;
 
 import java.util.List;
 
-public class xmlReader implements Reader{
+public class XmlReader implements Reader{
     @Override
     public void writeData(List<Task> tasks) {
 
